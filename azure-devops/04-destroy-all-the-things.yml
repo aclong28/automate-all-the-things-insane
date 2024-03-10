@@ -5,16 +5,16 @@ trigger: none
 variables:
   - group: aws-keys
   - name: AWS_REGION
-    value: AATT_AWS_REGION # This value was modified by the initial-setup python script
+    value: eu-central-1 # This value was modified by the initial-setup python script
   - name: APP_NAME
-    value: AATT_APP_NAME # This value was modified by the initial-setup python script
+    value: ngao-nghe # This value was modified by the initial-setup python script
 
 pool:
-  vmImage: 'ubuntu-latest' 
+  # vmImage: 'ubuntu-latest' 
   # If you are using a self-hosted agent, comment out the previous line and uncomment the following three
   # name: <agent-pool-name> # Insert here the name of the agent pool you created
-  # demands:
-  #   - agent.name -equals <agent-name> # Insert here the name of the agent you created
+  demands:
+    - agent.name -equals worker-0 # Insert here the name of the agent you created
 
 jobs:
 - job: DeleteK8SResources

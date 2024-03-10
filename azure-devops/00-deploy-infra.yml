@@ -3,14 +3,14 @@ name: deploy-infra
 trigger: none
 
 pool:
-  vmImage: 'ubuntu-latest' 
+  # vmImage: 'ubuntu-latest' 
   # If you are using a self-hosted agent, comment out the previous line and uncomment the following three
   # name: <agent-pool-name> # Insert here the name of the agent pool you created
-  # demands:
-  #   - agent.name -equals <agent-name> # Insert here the name of the agent you created
+  demands:
+    - agent.name -equals worker-0 # Insert here the name of the agent you created
 
 variables:
-  AWS_REGION: AATT_AWS_REGION  # This value was modified by the initial-setup python script
+  AWS_REGION: eu-central-1  # This value was modified by the initial-setup python script
 
 steps:
 # In this case it's necessary to specify the checkout with the persistCredential options set to true. This will enable us to push the changes to the repo.
