@@ -13,7 +13,7 @@ variables:
 pool:
   # vmImage: 'ubuntu-latest' 
   # If you are using a self-hosted agent, comment out the previous line and uncomment the following three
-  # name: <agent-pool-name> # Insert here the name of the agent pool you created
+  name: default # Insert here the name of the agent pool you created
   demands:
     - agent.name -equals worker-0 # Insert here the name of the agent you created
 
