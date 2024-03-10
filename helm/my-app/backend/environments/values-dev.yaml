@@ -1,6 +1,6 @@
 environment: dev
     
-redis_host: # This value was modified by the deploy-infra pipeline
+redis_host: master.ngao-nghe-dev-elascache-rep-group.7x8qwo.euc1.cache.amazonaws.com # This value was modified by the deploy-infra pipeline
 
 deployment:
   image:  
