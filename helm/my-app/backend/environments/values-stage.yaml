@@ -4,7 +4,7 @@ redis_host: master.ngao-nghe-stage-elascache-rep-group.7x8qwo.euc1.cache.amazona
 
 deployment:
   image:
-    tag: 72
+    tag: 80
   replicas: 1
 
 secret:
