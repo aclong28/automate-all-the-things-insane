@@ -2,7 +2,7 @@ appName: ngao-nghe # This value was modified by the initial-setup python script
 
 service: frontend
 
-host: ac85ab79610d646de934e505130416e8-1341477349.eu-central-1.elb.amazonaws.com # This value was modified by the deploy-argocd pipeline
+host: aa10734aae0b2430594e315f450d7144-983334390.eu-central-1.elb.amazonaws.com # This value was modified by the deploy-argocd pipeline
 
 port: 80
 
