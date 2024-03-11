@@ -70,10 +70,10 @@ stages:
     - script: |
         git config --global user.email "AzureDevOps@Build&DeployAppPipeline.com"
         git config --global user.name "Azure DevOps - Build & Deploy App Pipeline"
-        git checkout -b main
+        git checkout -f main
         git add helm/my-app/frontend/environments/values-dev.yaml 
         git commit -m "App version tag updated to $(Build.BuildId) by Azure DevOps"
-        git push --set-upstream origin main
+        git push
       displayName: 'Push changes to GitHub'
         
 
@@ -104,10 +104,10 @@ stages:
     - script: |
         git config --global user.email "AzureDevOps@Build&DeployAppPipeline.com"
         git config --global user.name "Azure DevOps - Build & Deploy App Pipeline"
-        git checkout -b main
+        git checkout -f main
         git add helm/my-app/frontend/environments/values-stage.yaml 
         git commit -m "App version tag updated to $(Build.BuildId) by Azure DevOps"
-        git push --set-upstream origin main
+        git push
       displayName: 'Push changes to GitHub'
         
 
@@ -149,8 +149,8 @@ stages:
     - script: |
         git config --global user.email "AzureDevOps@Build&DeployAppPipeline.com"
         git config --global user.name "Azure DevOps - Build & Deploy App Pipeline"
-        git checkout -b main
+        git checkout -f main
         git add helm/my-app/frontend/environments/values-prod.yaml 
         git commit -m "App version tag updated to $(Build.BuildId) by Azure DevOps"
-        git push --set-upstream origin main
+        git push
       displayName: 'Push changes to GitHub'
