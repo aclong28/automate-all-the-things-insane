@@ -59,7 +59,8 @@ stages:
 
     # We update the local repo with a pull just in case there have been any recent modifications
     - script: |
-        git pull origin main
+        git checkout -f main
+        git pull --no-ff
       displayName: Update repo
 
     - script: |
@@ -70,8 +71,6 @@ stages:
     - script: |
         git config --global user.email "AzureDevOps@Build&DeployAppPipeline.com"
         git config --global user.name "Azure DevOps - Build & Deploy App Pipeline"
-        git checkout -f main
-        git pull --no-ff
         git add helm/my-app/frontend/environments/values-dev.yaml 
         git commit -m "App version tag updated to $(Build.BuildId) by Azure DevOps"
         git push
@@ -94,7 +93,8 @@ stages:
   
     # Every time the pipeline performs a "checkout" step it will checkout the same commit, so we need this step to pull for the changes commited in the previous stage   
     - script: |
-        git pull origin main
+        git checkout -f main
+        git pull --no-ff
       displayName: Update repo
       
     - script: |
@@ -105,8 +105,6 @@ stages:
     - script: |
         git config --global user.email "AzureDevOps@Build&DeployAppPipeline.com"
         git config --global user.name "Azure DevOps - Build & Deploy App Pipeline"
-        git checkout -f main
-        git pull --no-ff
         git add helm/my-app/frontend/environments/values-stage.yaml 
         git commit -m "App version tag updated to $(Build.BuildId) by Azure DevOps"
         git push
@@ -140,7 +138,8 @@ stages:
       
     # Every time the pipeline performs a "checkout" step it will checkout the same commit, so we need this step to pull for the changes commited in the previous stage   
     - script: |
-        git pull origin main
+        git checkout -f main
+        git pull --no-ff
       displayName: Update repo
 
     - script: |
@@ -151,9 +150,6 @@ stages:
     - script: |
         git config --global user.email "AzureDevOps@Build&DeployAppPipeline.com"
         git config --global user.name "Azure DevOps - Build & Deploy App Pipeline"
-        git checkout -f main
-        git pull --no-ff
-
         git add helm/my-app/frontend/environments/values-prod.yaml 
         git commit -m "App version tag updated to $(Build.BuildId) by Azure DevOps"
         git push

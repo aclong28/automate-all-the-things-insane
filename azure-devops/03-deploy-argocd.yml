@@ -35,6 +35,12 @@ steps:
     echo -e "[default]\nregion = $(AWS_REGION)"> ~/.aws/config 
   displayName: 'Configure AWS Profile'
 
+- script: |
+    git checkout -f main
+    git pull --no-ff
+  displayName: Update repo
+
+
 - task: AWSCLI@1
   displayName: 'Update KubeConfig'
   inputs:
@@ -81,8 +87,6 @@ steps:
   condition: always()
 
 - script: |
-    git checkout -f main
-    git pull --no-ff
     git config --global user.email "AzureDevOps@ArgoCDDeployPipeline.com"
     git config --global user.name "Azure DevOps - ArgoCD Deploy Pipeline"
     git add helm/my-app/frontend/values.yaml
