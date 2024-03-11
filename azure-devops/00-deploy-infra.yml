@@ -70,6 +70,7 @@ steps:
     git checkout -f main
     git pull origin main --rebase
   displayName: Update repo
+  condition: always()
 
 - script: |
     echo "$(terraform -chdir=terraform/aws output -raw elasticache_dev_primary_endpoint_address) # This value was modified by the deploy-infra pipeline" > elasticache_dev_endpoint.txt
