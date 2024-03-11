@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc  
   project: ci-stuff
   source:
-    path: helm/infra/jenkins
+    path: helm/infra/ci-stuff/jenkins
     helm:
       valueFiles:
         - values-custom.yaml
