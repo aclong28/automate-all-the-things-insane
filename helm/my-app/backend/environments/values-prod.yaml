@@ -4,7 +4,7 @@ redis_host: master.ngao-nghe-prod-elascache-rep-group.7x8qwo.euc1.cache.amazonaw
 
 deployment:
   image:
-    tag: 72
+    tag: 80
   replicas: 1
     
 secret:
