@@ -67,7 +67,8 @@ steps:
 
 # We update the local repo with a pull just in case there have been any recent modifications
 - script: |
-    git pull origin main
+    git checkout -f main
+    git pull origin main --rebase
   displayName: Update repo
 
 - script: |
@@ -87,10 +88,9 @@ steps:
 - script: |
     git config --global user.email "AzureDevOps@Build&DeployAppPipeline.com"
     git config --global user.name "Azure DevOps - Build & Deploy App Pipeline"
-    git checkout -b main
     git add helm/my-app/backend/environments/
     git commit -m "ElastiCache endpoints updated in environments values.yaml files by Azure DevOps"
-    git push --set-upstream origin main
+    git push origin main
   displayName: 'Push changes to GitHub'
   condition: always()
 
