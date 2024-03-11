@@ -23,6 +23,12 @@ steps:
 - checkout: self
   persistCredentials: true
 
+- script: |
+    git pull
+    git checkout -f main
+    git pull --no-ff
+  displayName: Update repo
+
 - task: HelmInstaller@0
   inputs:
     displayName: Install helm
@@ -35,10 +41,6 @@ steps:
     echo -e "[default]\nregion = $(AWS_REGION)"> ~/.aws/config 
   displayName: 'Configure AWS Profile'
 
-- script: |
-    git checkout -f main
-    git pull --no-ff
-  displayName: Update repo
 
 
 - task: AWSCLI@1
