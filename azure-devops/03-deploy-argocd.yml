@@ -82,7 +82,7 @@ steps:
 
 - script: |
     git checkout -f main
-    git pull origin main --rebase
+    git pull
     git config --global user.email "AzureDevOps@ArgoCDDeployPipeline.com"
     git config --global user.name "Azure DevOps - ArgoCD Deploy Pipeline"
     git add helm/my-app/frontend/values.yaml
