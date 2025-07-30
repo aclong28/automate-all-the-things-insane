@@ -8,10 +8,10 @@ resource "aws_key_pair" "ssh-keys" {
 }
 
 resource "aws_instance" "ssh_host" {
-  ami           = "ami-0c7217cdde317cfec" # Ubuntu 22.04 us-east-1
-  # ami           = "ami-024e6efaf93d85776" # Ubuntu 22.04 us-east-2
+  ami           = "ami-020cba7c55df1f615" # Ubuntu 24.04 us-east-1
+  # ami           = "ami-024e6efaf93d85776" # Ubuntu 24.04 us-east-2
 
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
   key_name      = aws_key_pair.ssh-keys.key_name
 
   subnet_id              = aws_subnet.public-subnet-c.id
