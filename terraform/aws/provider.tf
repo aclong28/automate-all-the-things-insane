@@ -12,8 +12,8 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "Boring-tf-state-bucket"          # This value was modified by the initial-setup python script
-    dynamodb_table = "Boring-tf-state-dynamo-db-table" # This value was modified by the initial-setup python script
+    bucket         = "boring-tf-state-bucket"          # This value was modified by the initial-setup python script
+    dynamodb_table = "boring-tf-state-dynamo-db-table" # This value was modified by the initial-setup python script
     key            = "terraform.tfstate"
     region         = "us-east-1" # This value was modified by the initial-setup python script
     encrypt        = true
