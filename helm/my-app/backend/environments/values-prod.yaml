@@ -1,6 +1,6 @@
 environment: prod
 
-redis_host: ::error::Terraform exited with code 1.
+redis_host: master.boring-prod-elascache-rep-group.xmpscn.use1.cache.amazonaws.com
 
 deployment:
   image:
