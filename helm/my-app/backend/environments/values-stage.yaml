@@ -1,6 +1,6 @@
 environment: stage
 
-redis_host: # This value was modified by the deploy-infra pipeline
+redis_host: ::error::Terraform exited with code 1.
 
 deployment:
   image:
