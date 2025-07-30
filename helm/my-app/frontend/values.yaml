@@ -1,4 +1,4 @@
-appName: Boring # This value was modified by the initial-setup python script
+appName: boring # This value was modified by the initial-setup python script
 
 service: frontend
 
@@ -11,7 +11,7 @@ deployment:
     istio: monitor
   }
   image:
-    repository: aclong27/Boring-frontend # This value was modified by the initial-setup python script
+    repository: aclong27/boring-frontend # This value was modified by the initial-setup python script
 
 configmap:
   images: |-

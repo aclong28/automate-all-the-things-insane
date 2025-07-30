@@ -1,4 +1,4 @@
 apiVersion: v2
-name: Boring-backend # This value was modified by the initial-setup python script
-description: A Helm chart for deploying Boring-backend # This value was modified by the initial-setup python script
+name: boring-backend # This value was modified by the initial-setup python script
+description: A Helm chart for deploying boring-backend # This value was modified by the initial-setup python script
 version: 1.0
