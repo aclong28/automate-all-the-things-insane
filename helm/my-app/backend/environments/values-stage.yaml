@@ -1,6 +1,6 @@
 environment: stage
 
-redis_host: master.boring-stage-elascache-rep-group.xmpscn.use1.cache.amazonaws.com
+redis_host: ::error::Terraform exited with code 1.
 
 deployment:
   image:
